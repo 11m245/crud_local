@@ -1,14 +1,16 @@
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 function AddUser({ userList, setUserList }) {
-
+    const navigate = useNavigate();
 
 
     const addData = (currentUser) => {
         setUserList([...userList, currentUser]);
-        console.log("added");
+        navigate("/success");
+        // console.log("added");
     }
 
     return (<div>
@@ -24,7 +26,7 @@ function AddUserForm({ addData }) {
 
     const initialObjectValues = {
         id: currentId,
-        userInfo: { userId: "", password: "" },
+        userInfo: { userId: "", password: "", name: "" },
         contactInfo: { mobile: "", email: "" },
         address: {
             line1: "",
@@ -41,7 +43,7 @@ function AddUserForm({ addData }) {
         (e).preventDefault();
         setCurrentId(currentId + 1)
         addData({ ...currentUser, id: currentId });
-        console.log("current Data is", currentUser);
+        // console.log("current Data is", currentUser);
     }
     // console.log(currentUser);
 
@@ -81,6 +83,22 @@ function AddUserForm({ addData }) {
                     );
                 }} />
             </div>
+
+            <div className="col-md-6">
+                <label htmlFor="name" className="form-label">Name</label>
+                <input type="text" className="form-control" id="name" name="name" onChange={(e) => {
+                    setCurrentUser(
+                        {
+                            ...currentUser,
+                            userInfo: {
+                                ...currentUser.userInfo,
+                                name: e.target.value
+                            }
+                        }
+                    );
+                }} />
+            </div>
+
             <h6 className="mb-0 text-primary">Contact Information</h6>
             <div className="col-md-6">
                 <label htmlFor="mobile" className="form-label">Mobile Number</label>

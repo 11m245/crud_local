@@ -16,7 +16,7 @@ function App() {
   const initialUserList = [
     {
       id: 1,
-      userInfo: { userId: "11m240", password: "123456" },
+      userInfo: { userId: "11m240", password: "123456", name: "siva" },
       contactInfo: { mobile: "9500852760", email: "sivaraj2siva@gmail.com" },
       address: {
         line1: "1/35 pudu Street",
@@ -26,7 +26,7 @@ function App() {
       }
     }, {
       id: 2,
-      userInfo: { userId: "11m241", password: "123456" },
+      userInfo: { userId: "11m241", password: "123456", name: "siva" },
       contactInfo: { mobile: "9500852761", email: "sivaraj2siva@gmail.com" },
       address: {
         line1: "1/35 pudu Street",
@@ -36,7 +36,7 @@ function App() {
       }
     }, {
       id: 3,
-      userInfo: { userId: "11m242", password: "123456" },
+      userInfo: { userId: "11m242", password: "123456", name: "siva" },
       contactInfo: { mobile: "9500852762", email: "sivaraj2siva@gmail.com" },
       address: {
         line1: "1/35 pudu Street",
@@ -46,7 +46,7 @@ function App() {
       }
     }, {
       id: 4,
-      userInfo: { userId: "11m243", password: "123456" },
+      userInfo: { userId: "11m243", password: "123456", name: "siva" },
       contactInfo: { mobile: "9500852763", email: "sivaraj2siva@gmail.com" },
       address: {
         line1: "1/35 pudu Street",
@@ -56,7 +56,7 @@ function App() {
       }
     }, {
       id: 5,
-      userInfo: { userId: "11m244", password: "123456" },
+      userInfo: { userId: "11m244", password: "123456", name: "siva" },
       contactInfo: { mobile: "9500852764", email: "sivaraj2siva@gmail.com" },
       address: {
         line1: "1/35 pudu Street",

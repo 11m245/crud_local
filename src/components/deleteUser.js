@@ -109,6 +109,21 @@ function DeleteUserForm({ index, userList, setUserList }) {
                     );
                 }} />
             </div>
+
+            <div className="col-md-6">
+                <label htmlFor="name" className="form-label">Name</label>
+                <input type="text" className="form-control" id="name" name="name" value={currentUser.userInfo.name} onChange={(e) => {
+                    setCurrentUser(
+                        {
+                            ...currentUser,
+                            userInfo: {
+                                ...currentUser.userInfo,
+                                name: e.target.value
+                            }
+                        }
+                    );
+                }} />
+            </div>
             <h6 className="mb-0 text-primary">Contact Information</h6>
             <div className="col-md-6">
                 <label htmlFor="mobile" className="form-label">Mobile Number</label>
