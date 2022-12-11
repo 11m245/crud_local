@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Header() {
 
-    const menuList = [{ name: "Create User", icon: <PersonAddIcon />, path: "create-user" },
+    const menuList = [{ name: "Create User", icon: <PersonAddIcon />, path: "/create-user" },
     { name: "Edit User", icon: <ManageAccountsIcon />, path: "edit-user" },
     { name: "Delete User", icon: <DeleteIcon />, path: "delete-user" },
     { name: "List Users", icon: <ListAltIcon />, path: "list-users" },
