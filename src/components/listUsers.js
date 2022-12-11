@@ -67,7 +67,7 @@ function BasicTable({ userList, showInfo, setShowInfo }) {
                         <TableCell sx={{ fontSize: 22 }} align="right">userID</TableCell>
                         <TableCell sx={{ fontSize: 22 }} align="right">Mobile</TableCell>
                         <TableCell sx={{ fontSize: 22 }} align="right">edit</TableCell>
-                        <TableCell align="right">delete</TableCell>
+                        <TableCell sx={{ fontSize: 22 }} align="right">delete</TableCell>
 
 
                     </TableRow>

@@ -8,7 +8,7 @@ function EditUser({ userList, setUserList }) {
     return (<>
         <InfoForm inputName="Enter User MobileNo." buttonName="Get Info" userList={userList}
             foundIndex={foundIndex} setFoundIndex={setFoundIndex} />
-        {(foundIndex) >= 0 && (foundIndex) !== null ? <EditUserForm index={foundIndex} userList={userList} setUserList={setUserList} /> : `user not yet found`}
+        {(foundIndex) >= 0 && (foundIndex) !== null ? <EditUserForm index={foundIndex} userList={userList} setUserList={setUserList} /> : <p className="text-center">user not yet found</p>}
     </>)
 }
 
@@ -21,7 +21,7 @@ function InfoForm(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        const index = getUserIndexfromMobile(info, userList);
+        const index = getUserIndexfromMobile(info.trim(), userList);
         // console.log("index is", index);
         index >= 0 ? setFoundIndex(index) : setFoundIndex(null);
 
@@ -47,7 +47,7 @@ function getUserIndexfromMobile(info, userList) {
         // console.log("length Info is", info.length);
         // console.log("data type exist is", typeof (userList[i].contactInfo.mobile))
         // console.log(`info ${info} is compared with ${userList[i].contactInfo.mobile}`)
-        if ((info ? (info).trim() : null) == (userList[i].contactInfo.mobile)) {
+        if (info == userList[i].contactInfo.mobile) {
             // console.log("matched")
             index = i;
             return index;
@@ -76,7 +76,7 @@ function EditUserForm({ index, userList, setUserList }) {
     }
 
     return (<>
-        <p> found index {index}</p>
+        <p className="text-center"> found index {index}</p>
 
         <form onSubmit={handleSubmit} className="row g-3 form-wrapper p-3 w-75 mx-auto" >
             <h3 className="text-center">Edit User Details Form</h3>

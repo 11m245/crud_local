@@ -4,12 +4,14 @@ import { useNavigate } from "react-router-dom";
 
 
 function AddUser({ userList, setUserList }) {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
 
-    const addData = (currentUser) => {
-        setUserList([...userList, currentUser]);
-        navigate("/success");
+    const addData = (currentUser, id) => {
+        // console.log(currentUser);
+        setUserList([...userList, currentUser,]);
+        alert("successfully added, inorder to keep unique ids we unable to navigate you, to the success page");
+        // navigate("/success");
         // console.log("added");
     }
 
@@ -19,9 +21,11 @@ function AddUser({ userList, setUserList }) {
 }
 
 
+
+
 function AddUserForm({ addData }) {
 
-    const [currentId, setCurrentId] = useState(100);
+    const [currentId, setCurrentId] = useState(101);
 
 
     const initialObjectValues = {
@@ -41,9 +45,10 @@ function AddUserForm({ addData }) {
 
     const handleSubmit = (e) => {
         (e).preventDefault();
-        setCurrentId(currentId + 1)
-        addData({ ...currentUser, id: currentId + 1 });
-        // console.log("current Data is", currentUser);
+        // console.log("current id is", currentId);
+        setCurrentId(currentId + 1);
+        addData({ ...currentUser, id: currentId },);
+
     }
     // console.log(currentUser);
 

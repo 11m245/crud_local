@@ -8,7 +8,7 @@ function DeleteUser({ userList, setUserList }) {
     return (<>
         <InfoForm inputName="Enter User MobileNo." buttonName="Get Info" userList={userList}
             foundIndex={foundIndex} setFoundIndex={setFoundIndex} />
-        {(foundIndex) >= 0 && (foundIndex) !== null ? <DeleteUserForm index={foundIndex} userList={userList} setUserList={setUserList} /> : `user not yet found`}
+        {(foundIndex) >= 0 && (foundIndex) !== null ? <DeleteUserForm index={foundIndex} userList={userList} setUserList={setUserList} /> : <p className="text-center">user not yet found</p>}
 
     </>)
 }
@@ -21,7 +21,7 @@ function InfoForm(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        const index = getUserIndexfromMobile(info, userList);
+        const index = getUserIndexfromMobile(info.trim(), userList);
         // console.log("index is", index);
         index >= 0 ? setFoundIndex(index) : setFoundIndex(null);
 
@@ -29,9 +29,9 @@ function InfoForm(props) {
 
     return (<>
         <form onClick={handleSubmit} className="info-form w-50 mx-auto my-3">
-            <div class="input-group mb-3">
+            <div className="input-group mb-3">
                 <input onChange={(e) => setInfo(e.target.value)} type="text" className="form-control" placeholder={inputName} aria-label={inputName} aria-describedby="button-g" />
-                <button class="btn btn-outline-primary" type="submit" id="button-g">{buttonName}</button>
+                <button className="btn btn-outline-primary" type="submit" id="button-g">{buttonName}</button>
             </div>
         </form>
     </>)
@@ -46,7 +46,7 @@ function getUserIndexfromMobile(info, userList) {
         // console.log("length Info is", info.length);
         // console.log("data type exist is", typeof (userList[i].contactInfo.mobile))
         // console.log(`info ${info} is compared with ${userList[i].contactInfo.mobile}`)
-        if ((info).trim() == (userList[i].contactInfo.mobile)) {
+        if (info == userList[i].contactInfo.mobile) {
             // console.log("matched")
             index = i;
             return index;
@@ -75,7 +75,7 @@ function DeleteUserForm({ index, userList, setUserList }) {
     }
 
     return (<>
-        <p> found index {index}</p>
+        <p className="text-center"> found index {index}</p>
 
         <form onSubmit={handleSubmit} className="row g-3 form-wrapper p-3 w-75 mx-auto" >
             <h3 className="text-center">Delete User Details Preview</h3>
