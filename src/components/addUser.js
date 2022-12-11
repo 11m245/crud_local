@@ -42,7 +42,7 @@ function AddUserForm({ addData }) {
     const handleSubmit = (e) => {
         (e).preventDefault();
         setCurrentId(currentId + 1)
-        addData({ ...currentUser, id: currentId });
+        addData({ ...currentUser, id: currentId + 1 });
         // console.log("current Data is", currentUser);
     }
     // console.log(currentUser);
@@ -102,7 +102,7 @@ function AddUserForm({ addData }) {
             <h6 className="mb-0 text-primary">Contact Information</h6>
             <div className="col-md-6">
                 <label htmlFor="mobile" className="form-label">Mobile Number</label>
-                <input type="number" className="form-control" id="mobile" name="mob" onChange={(e) => {
+                <input type="number" className="form-control" required id="mobile" name="mob" onChange={(e) => {
                     setCurrentUser(
                         {
                             ...currentUser,

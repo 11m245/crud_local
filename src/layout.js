@@ -7,7 +7,7 @@ function Layout() {
             <div className="App container-fluid">
                 <div className="project-container container">
                     <Header />
-                    <div className="content-container">
+                    <div className="content-container pt-3">
                         <Outlet />
                     </div>
                 </div>

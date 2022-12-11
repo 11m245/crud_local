@@ -5,6 +5,7 @@ import { WelcomeComponent } from './components/welcomecomponent';
 import { AddUser } from './components/addUser';
 import { EditUser } from './components/editUser';
 import { DeleteUser } from './components/deleteUser';
+import { ListUsers } from "./components/listUsers"
 import { NotFound } from './components/notfound';
 import { Layout } from './layout';
 import { Success } from './components/success';
@@ -16,7 +17,7 @@ function App() {
   const initialUserList = [
     {
       id: 1,
-      userInfo: { userId: "11m240", password: "123456", name: "siva" },
+      userInfo: { userId: "11m240", password: "123456", name: "siva1" },
       contactInfo: { mobile: "9500852760", email: "sivaraj2siva@gmail.com" },
       address: {
         line1: "1/35 pudu Street",
@@ -26,7 +27,7 @@ function App() {
       }
     }, {
       id: 2,
-      userInfo: { userId: "11m241", password: "123456", name: "siva" },
+      userInfo: { userId: "11m241", password: "123456", name: "siva2" },
       contactInfo: { mobile: "9500852761", email: "sivaraj2siva@gmail.com" },
       address: {
         line1: "1/35 pudu Street",
@@ -36,7 +37,7 @@ function App() {
       }
     }, {
       id: 3,
-      userInfo: { userId: "11m242", password: "123456", name: "siva" },
+      userInfo: { userId: "11m242", password: "123456", name: "siva3" },
       contactInfo: { mobile: "9500852762", email: "sivaraj2siva@gmail.com" },
       address: {
         line1: "1/35 pudu Street",
@@ -46,7 +47,7 @@ function App() {
       }
     }, {
       id: 4,
-      userInfo: { userId: "11m243", password: "123456", name: "siva" },
+      userInfo: { userId: "11m243", password: "123456", name: "siva4" },
       contactInfo: { mobile: "9500852763", email: "sivaraj2siva@gmail.com" },
       address: {
         line1: "1/35 pudu Street",
@@ -56,7 +57,7 @@ function App() {
       }
     }, {
       id: 5,
-      userInfo: { userId: "11m244", password: "123456", name: "siva" },
+      userInfo: { userId: "11m244", password: "123456", name: "siva5" },
       contactInfo: { mobile: "9500852764", email: "sivaraj2siva@gmail.com" },
       address: {
         line1: "1/35 pudu Street",
@@ -69,7 +70,7 @@ function App() {
   const [userList, setUserList] = useState(initialUserList);
 
 
-  useEffect(() => console.log(userList), [userList]);
+  // useEffect(() => console.log(userList), [userList]);
 
 
 
@@ -80,6 +81,7 @@ function App() {
         <Route path="create-user" element={<AddUser userList={userList} setUserList={setUserList} />} />
         <Route path="edit-user" element={<EditUser userList={userList} setUserList={setUserList} />} />
         <Route path="delete-user" element={<DeleteUser userList={userList} setUserList={setUserList} />} />
+        <Route path="list-users" element={<ListUsers userList={userList} setUserList={setUserList} />} />
         <Route path="success" element={<Success />} />
         <Route path="*" element={<NotFound />} />
       </Route>

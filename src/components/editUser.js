@@ -29,9 +29,9 @@ function InfoForm(props) {
 
     return (<>
         <form onClick={handleSubmit} className="info-form w-50 mx-auto my-3">
-            <div class="input-group mb-3">
+            <div className="input-group mb-3">
                 <input onChange={(e) => setInfo(e.target.value)} type="text" className="form-control" placeholder={inputName} aria-label={inputName} aria-describedby="button-g" />
-                <button class="btn btn-outline-primary" type="submit" id="button-g">{buttonName}</button>
+                <button className="btn btn-outline-primary" type="submit" id="button-g">{buttonName}</button>
             </div>
         </form>
     </>)
@@ -47,7 +47,7 @@ function getUserIndexfromMobile(info, userList) {
         // console.log("length Info is", info.length);
         // console.log("data type exist is", typeof (userList[i].contactInfo.mobile))
         // console.log(`info ${info} is compared with ${userList[i].contactInfo.mobile}`)
-        if ((info).trim() == (userList[i].contactInfo.mobile)) {
+        if ((info ? (info).trim() : null) == (userList[i].contactInfo.mobile)) {
             // console.log("matched")
             index = i;
             return index;
@@ -181,7 +181,7 @@ function EditUserForm({ index, userList, setUserList }) {
             </div>
             <div className="col-md-6">
                 <label htmlFor="country" className="form-label">Country</label>
-                <input type="text" className="form-control" id="country" defaultValue="India" name="country" value={currentUser.address.country} onChange={(e) => {
+                <input type="text" className="form-control" id="country" name="country" value={currentUser.address.country} onChange={(e) => {
                     setCurrentUser(
                         {
                             ...currentUser,
